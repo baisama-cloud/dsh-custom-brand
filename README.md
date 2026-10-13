@@ -35,7 +35,7 @@ Stored keys (browser `localStorage`): `dsh.customLogo`, `dsh.customDeepSeekImg`,
 This is a standard DSH bundle:
 
 - `lib/index.js` — host half (intentionally empty; all behavior is client-side)
-- `lib/client.js` — browser half, registered via `window.__ModuleLoader__.load`
+- `lib/client.js` — browser half, registered via `window.__ModuleLoader__.load`; it patches the live brand DOM, supporting both the current plain-text wordmark layout (separate `brandMark` / `brandName` hosts) and the older combined-svg layout
 - `cordis.patch.yml` — loader row inserting the plugin
 
 Build the tarball with:

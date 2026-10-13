@@ -151,6 +151,7 @@ check('mark host found', !!document.querySelector('[class*="brandMark"]'));
 check('name host found', !!document.querySelector('[class*="brandName"]'));
 check('logo hit layer injected', !!document.querySelector('[data-brand-logo]'));
 check('badge layer injected', !!document.querySelector('[data-brand-badge]'));
+check('DeepSeek image layer injected', !!document.querySelector('[data-brand-ds]'));
 check('badge shows HARNESS', badgeDiv() && badgeDiv().textContent === 'HARNESS');
 
 // default state: stay pixel-identical to stock
@@ -187,7 +188,11 @@ store['dsh.customLogo'] = 'data:image/png;base64,AAAA';
 store['dsh.customDeepSeekImg'] = 'data:image/png;base64,BBBB';
 run();
 check('whale hidden when custom logo set', fishSvg.style.visibility === 'hidden');
-check('wordmark hidden when custom image set', wordmarkSvg.style.visibility === 'hidden');
+check('DeepSeek lettering hidden when custom image set', letterPath.style.display === 'none');
+check('wordmark svg stays visible so badge glyphs survive', wordmarkSvg.style.visibility !== 'hidden');
+check('badge glyphs stay visible with custom DeepSeek image', badgeG.style.display !== 'none');
+const dsLayer = document.querySelector('[data-brand-ds]');
+check('DeepSeek image rendered in its own layer', !!(dsLayer && dsLayer.querySelector('img')));
 
 const w = Math.max(...results.map((r) => r[1].length));
 for (const [st, name, extra] of results) {

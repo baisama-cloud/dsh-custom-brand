@@ -1,7 +1,7 @@
 {
   "name": "dsh-custom-brand",
   "description": "Customizable brand area for the DeepSeek Harness web GUI: replace the whale logo and the DeepSeek wordmark with local images, and edit the HARNESS badge text — double-click to change, right-click to reset. 自定义 DSH 左上角品牌区：logo 与 DeepSeek 文字可换本地图片，HARNESS 徽章文字可双击编辑。",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "license": "MIT",
   "type": "module",
   "main": "lib/index.js",
